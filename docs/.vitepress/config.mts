@@ -2,6 +2,9 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+
+  base: '/',
+  ignoreDeadLinks: true,
   title: "Supreme Index",
   description: "SupremeMuhit's Media Index",
   themeConfig: {
