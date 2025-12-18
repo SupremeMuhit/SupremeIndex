@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "unplugin-auto-import": "^20.3.0",
     "vitepress": "^2.0.0-alpha.15",
     "vue": "^3.5.25"
   },
