@@ -17,7 +17,7 @@ function checkPassword() {
 </script>
 
 # Secret Vault
-**Hint:You can get the password if you are a coder or have some knowledge in coding, You Know What I am Taking About🤫 or Find the password in this site, that can be anywhere.**
+**Hint:You can get the password in *the source* if have some knowledge in coding, You Know What I am Taking About🤫 or Find the password in this site, that can be anywhere.**
 <div v-if="!isUnlocked" class="vault-login">
   <div class="lock-icon">🔒</div>
   <h2>Security Check</h2>

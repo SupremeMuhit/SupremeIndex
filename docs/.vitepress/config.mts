@@ -81,7 +81,14 @@ export default defineConfig({
     /* ---- Navbar ---- */
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Ecosystem', items:[
+        {text:'Feature 1',link:'/'},
+        {text:'Feature 2',link:'/'},
+        {text:'Feature 3',link:'/'},
+        {text:'Feature 4',link:'/'},
+        {text:'Feature 5',link:'/'}
+      ]
+    }
     ],
 
     /* ---- Sidebar ---- */
@@ -90,8 +97,6 @@ export default defineConfig({
         text: 'Get Started',
         link: '/get-started',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
           { text: 'About Me', link: '/about' },
           { text: 'My Social Links', link: '/social-links' },
           { text: 'Blog', link: '/blog' }
@@ -148,6 +153,10 @@ export default defineConfig({
          This site does not host any files.`,
       copyright:
         `© ${new Date().getFullYear()} Supreme Index`
+    },
+    logo: {
+      src: '/favicon.ico',
+      alt: 'SI Logo'
     }
   }
 })
