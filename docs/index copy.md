@@ -17,7 +17,7 @@ hero:
       text: About Me
       link: /about
     - theme: alt
-      text: My Social Links
+      text: My Social Media
       link: /social-links
 
 features:
@@ -37,13 +37,8 @@ features:
     icon: |
 
   - title: Vault
-    details: Enter Password to enter.
+    details: Enter Password to enter
     link: /vault
-    icon: |
-
-  - title: Blog
-    details: Cheak My Blogs
-    link: /blog
     icon: |
 
 ---
