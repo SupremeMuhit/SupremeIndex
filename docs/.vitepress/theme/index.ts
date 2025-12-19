@@ -1,17 +1,14 @@
-// https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import ThemeSwitcher from './components/ThemeSwitcher.vue'
 import './style.css'
 
 export default {
   extends: DefaultTheme,
-  Layout: () => {
+  Layout() {
     return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
+      'nav-bar-content-after': () => h(ThemeSwitcher)
     })
-  },
-  enhanceApp({ app, router, siteData }) {
-    // ...
   }
 } satisfies Theme

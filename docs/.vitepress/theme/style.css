@@ -1,48 +1,13 @@
 /**
- * Customize default theme styling by overriding CSS variables:
- * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ * =========================
+ * Supreme Index – Theme
+ * Light / Dark / AMOLED
+ * =========================
  */
 
-/**
- * Colors
- *
- * Each colors have exact same color scale system with 3 levels of solid
- * colors with different brightness, and 1 soft color.
- *
- * - `XXX-1`: The most solid color used mainly for colored text. It must
- *   satisfy the contrast ratio against when used on top of `XXX-soft`.
- *
- * - `XXX-2`: The color used mainly for hover state of the button.
- *
- * - `XXX-3`: The color for solid background, such as bg color of the button.
- *   It must satisfy the contrast ratio with pure white (#ffffff) text on
- *   top of it.
- *
- * - `XXX-soft`: The color used for subtle background such as custom container
- *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
- *   on top of it.
- *
- *   The soft color must be semi transparent alpha channel. This is crucial
- *   because it allows adding multiple "soft" colors on top of each other
- *   to create an accent, such as when having inline code block inside
- *   custom containers.
- *
- * - `default`: The color used purely for subtle indication without any
- *   special meanings attached to it such as bg color for menu hover state.
- *
- * - `brand`: Used for primary brand colors, such as link text, button with
- *   brand theme, etc.
- *
- * - `tip`: Used to indicate useful information. The default theme uses the
- *   brand color for this by default.
- *
- * - `warning`: Used to indicate warning to the users. Used in custom
- *   container, badges, etc.
- *
- * - `danger`: Used to show error, or dangerous message to the users. Used
- *   in custom container, badges, etc.
- * -------------------------------------------------------------------------- */
-
+/* --------------------------------------------------
+ * LIGHT MODE (default)
+ * -------------------------------------------------- */
 :root {
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
@@ -137,3 +102,123 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/* --------------------------------------------------
+ * DARK MODE (normal gray)
+ * html.dark but NOT amoled
+ * -------------------------------------------------- */
+html.dark:not(.amoled) {
+  /* Backgrounds */
+  --vp-c-bg: #1a1a1a;
+  --vp-c-bg-alt: #171717;
+  --vp-c-bg-elv: rgba(23, 23, 23, 0.85);
+
+  /* Text */
+  --vp-c-text-1: rgba(255, 255, 255, 0.88);
+  --vp-c-text-2: rgba(255, 255, 255, 0.68);
+  --vp-c-text-3: rgba(255, 255, 255, 0.45);
+
+  /* Borders */
+  --vp-c-divider: rgba(255, 255, 255, 0.12);
+}
+
+/* --------------------------------------------------
+ * AMOLED MODE (pure black)
+ * html.dark.amoled
+ * -------------------------------------------------- */
+html.dark.amoled {
+  --vp-c-bg: #000000;
+  --vp-c-bg-alt: #050505;
+  --vp-c-bg-elv: rgba(8, 8, 8, 0.9);
+
+  --vp-c-text-1: rgba(255, 255, 255, 0.92);
+  --vp-c-text-2: rgba(255, 255, 255, 0.75);
+  --vp-c-text-3: rgba(255, 255, 255, 0.55);
+
+  --vp-c-divider: rgba(255, 255, 255, 0.08);
+}
+
+/* --------------------------------------------------
+ * LINKS
+ * -------------------------------------------------- */
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.25s;
+}
+
+.vp-doc a:hover {
+  text-decoration-color: var(--vp-c-brand-1);
+}
+
+/* --------------------------------------------------
+ * FOOTER LINKS
+ * -------------------------------------------------- */
+.VPFooter a {
+  text-decoration: underline dashed;
+  text-underline-offset: 5px;
+  transition: color 0.2s;
+}
+
+.VPFooter a:hover {
+  color: var(--vp-c-text-1);
+}
+
+/* --------------------------------------------------
+ * SCROLLBAR (sidebar)
+ * -------------------------------------------------- */
+.VPSidebar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.VPSidebar::-webkit-scrollbar-thumb {
+  background-color: var(--vp-c-divider);
+  border-radius: 6px;
+}
+
+/* --------------------------------------------------
+ * TEXT SELECTION
+ * -------------------------------------------------- */
+::selection {
+  background-color: rgba(123, 197, 228, 0.35);
+}
+
+html.dark ::selection {
+  background-color: rgba(123, 197, 228, 0.25);
+}
+/* --------------------------------------------------
+ * CUSTOM NAVBAR ORDERING
+ * Fixes Theme Switcher position
+ * -------------------------------------------------- */
+.VPNavBar .content-body {
+  display: flex;
+  align-items: center;
+}
+
+.VPNavBarSearch { order: 1; }
+.VPNavBarMenu { order: 2; }
+.theme-switcher { 
+  order: 3;
+  margin-left: 12px;
+  margin-right: 0;
+}
+
+/* Add divider to the left of theme switcher */
+.theme-switcher::before {
+  content: "";
+  width: 1px;
+  height: 24px;
+  background-color: var(--vp-c-divider);
+  margin-right: 8px;
+}
+
+/* Ensure right divider matches left divider spacing */
+.VPNavBarSocialLinks::before {
+  margin-left: 8px !important;
+}
+
+.VPNavBarSocialLinks { order: 4; }
+.VPNavBarExtra { order: 5; }
+.VPNavBarHamburger { order: 6; }

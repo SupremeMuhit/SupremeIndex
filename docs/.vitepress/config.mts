@@ -3,10 +3,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  /* =======================
-     Core site config
-  ======================= */
-
   base: '/',
   title: 'Supreme Index',
   description: 'A Free Media Index',
@@ -19,35 +15,19 @@ export default defineConfig({
     hostname: 'https://supremeindex.pages.dev'
   },
 
-  /* =======================
-     Head / SEO / Social
-  ======================= */
-
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-
     ['meta', { name: 'theme-color', content: '#000000' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Supreme Index' }],
     ['meta', { property: 'og:description', content: 'A Free Media Index' }],
     ['meta', { property: 'og:image', content: '/og.png' }],
-
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }]
   ],
 
-  /* =======================
-     Markdown improvements
-  ======================= */
-
   markdown: {
-    headers: {
-      level: [2, 3, 4]
-    }
+    headers: { level: [2, 3, 4] }
   },
-
-  /* =======================
-     Vite (plugins, future-proof)
-  ======================= */
 
   vite: {
     plugins: [
@@ -55,43 +35,36 @@ export default defineConfig({
         imports: ['vue', 'vitepress'],
         dts: '.vitepress/auto-imports.d.ts'
       }),
-
-      // Plugin order safety (FMHY-style but minimal)
-      {
-        name: 'plugin-order-safety',
-        enforce: 'pre'
-      }
+      { name: 'plugin-order-safety', enforce: 'pre' }
     ]
   },
 
-  /* =======================
-     Theme config
-  ======================= */
-
+  appearance: false, // disables default theme toggle
   themeConfig: {
-    /* ---- Search (enhanced local) ---- */
     search: {
-      provider: 'local',
-      options: {
-        detailedView: true,
-        disableQueryPersistence: true
-      }
+      provider: 'local'
     },
 
-    /* ---- Navbar ---- */
+    logo: {
+      src: '/favicon.ico',
+      alt: 'SI Logo'
+    },
+
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Ecosystem', items:[
-        {text:'Feature 1',link:'/'},
-        {text:'Feature 2',link:'/'},
-        {text:'Feature 3',link:'/'},
-        {text:'Feature 4',link:'/'},
-        {text:'Feature 5',link:'/'}
-      ]
-    }
+      {
+        text: 'Ecosystem',
+        items: [
+          { text: 'Feature 1', link: '/' },
+          { text: 'Feature 2', link: '/' },
+          { text: 'Feature 3', link: '/' },
+          { text: 'Feature 4', link: '/' },
+          { text: 'Feature 5', link: '/' }
+        ]
+      },
+
     ],
 
-    /* ---- Sidebar ---- */
     sidebar: [
       {
         text: 'Get Started',
@@ -140,23 +113,16 @@ export default defineConfig({
       }
     ],
 
-    /* ---- Social links ---- */
     socialLinks: [
       { icon: 'x', link: 'https://x.com/@supreme_muhit' },
       { icon: 'github', link: 'https://github.com/suprememuhit' }
     ],
 
-    /* ---- Footer (FMHY-inspired) ---- */
     footer: {
       message:
         `Made with ❤️ using <a href="https://vitepress.dev" target="_blank">VitePress</a><br/>
          This site does not host any files.`,
-      copyright:
-        `© ${new Date().getFullYear()} Supreme Index`
-    },
-    logo: {
-      src: '/favicon.ico',
-      alt: 'SI Logo'
+      copyright: `© ${new Date().getFullYear()} Supreme Index`
     }
   }
 })
