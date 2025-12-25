@@ -1,11 +1,38 @@
 import { defineConfig } from 'vitepress'
 import AutoImport from 'unplugin-auto-import/vite'
+import { execSync } from 'child_process'
+import { abbr } from '@mdit/plugin-abbr'
+import { sub } from '@mdit/plugin-sub'
+import { sup } from '@mdit/plugin-sup'
+import { attrs } from '@mdit/plugin-attrs'
+import { footnote } from '@mdit/plugin-footnote'
+import { spoiler } from '@mdit/plugin-spoiler'
+import { ins } from '@mdit/plugin-ins'
+import { tasklist } from '@mdit/plugin-tasklist'
+import { mark } from '@mdit/plugin-mark'
+import { icon } from '@mdit/plugin-icon'
+import { align } from '@mdit/plugin-align'
+import { imgSize } from '@mdit/plugin-img-size'
+import { demo } from '@mdit/plugin-demo'
+import { tab } from '@mdit/plugin-tab'
 
-// https://vitepress.dev/reference/site-config
+// --- Get latest git commit title and short hash ---
+let commitTitle = 'development'
+let commitHash = '0000000'
+try {
+  commitTitle = execSync('git log -1 --pretty=%s').toString().trim()
+  commitHash = execSync('git log -1 --pretty=%h').toString().trim()
+} catch (e) {
+  // fallback if Git is unavailable (Cloudflare Pages preview)
+}
+
+// GitHub commit URL
+const commitUrl = `https://github.com/SupremeMuhit/SupremeIndex/commit/${commitHash}`
+
 export default defineConfig({
   base: '/',
   title: 'Supreme Index',
-  description: 'A Free Media Index',
+  description: 'A free media, resource, and tool index',
 
   cleanUrls: true,
   ignoreDeadLinks: true,
@@ -16,17 +43,45 @@ export default defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'theme-color', content: '#000000' }],
+    // Favicons
+    ['link', { rel: 'icon', type: 'image/png', sizes: '48x48', href: '/favicon.png' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    // SEO description
+    ['meta', { name: 'description', content: 'Supreme Index is a free media, resource, and tool index featuring alternatives, curated lists, and a digital vault.' }],
+    // Open Graph
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Supreme Index' }],
-    ['meta', { property: 'og:description', content: 'A Free Media Index' }],
-    ['meta', { property: 'og:image', content: '/og.png' }],
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }]
+    ['meta', { property: 'og:description', content: 'A free media, resource, and tool index with alternatives, curated lists, and a digital vault.' }],
+    ['meta', { property: 'og:site_name', content: 'Supreme Index' }],
+    ['meta', { property: 'og:url', content: 'https://supremeindex.pages.dev' }],
+    ['meta', { property: 'og:image', content: 'https://supremeindex.pages.dev/og.png' }],
+    // Twitter / X
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'Supreme Index' }],
+    ['meta', { name: 'twitter:description', content: 'A free media, resource, and tool index with alternatives and curated resources.' }],
+    ['meta', { name: 'twitter:image', content: 'https://supremeindex.pages.dev/og.png' }],
+    // Theme color
+    ['meta', { name: 'theme-color', content: '#000000' }]
   ],
 
   markdown: {
-    headers: { level: [2, 3, 4] }
+    headers: { level: [2, 3, 4] },
+    config(md) {
+      md.use(abbr)
+      md.use(sub)
+      md.use(sup)
+      md.use(attrs)
+      md.use(footnote)
+      md.use(spoiler)
+      md.use(ins)
+      md.use(tasklist)
+      md.use(mark)
+      md.use(align)
+      md.use(icon)
+      md.use(demo)
+      md.use(tab)
+      md.use(imgSize)
+    }
   },
 
   vite: {
@@ -39,16 +94,12 @@ export default defineConfig({
     ]
   },
 
-  appearance: false, // disables default theme toggle
-  themeConfig: {
-    search: {
-      provider: 'local'
-    },
+  appearance: false,
 
-    logo: {
-      src: '/favicon.ico',
-      alt: 'SI Logo'
-    },
+  themeConfig: {
+    search: { provider: 'local' },
+
+    logo: { src: '/favicon.ico', alt: 'SI Logo' },
 
     nav: [
       { text: 'Home', link: '/' },
@@ -61,8 +112,7 @@ export default defineConfig({
           { text: 'Feature 4', link: '/' },
           { text: 'Feature 5', link: '/' }
         ]
-      },
-
+      }
     ],
 
     sidebar: [
@@ -98,7 +148,7 @@ export default defineConfig({
           { text: 'System / File Tools', link: '/tool-system' },
           { text: 'Internet / Social Tools', link: '/tool-internet' },
           { text: 'Text / Educational Tools', link: '/tool-text' },
-          { text: 'Gaming Tools', link: '/tool-gaming' },
+          { text: 'Gaming', link: '/tool-gaming' },
           { text: 'Media Tools', link: '/tool-media' },
           { text: 'Developer Tools', link: '/tool-developer' }
         ]
@@ -115,14 +165,12 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'x', link: 'https://x.com/@supreme_muhit' },
-      { icon: 'github', link: 'https://github.com/suprememuhit' }
+      { icon: 'github', link: 'https://github.com/SupremeMuhit' }
     ],
 
     footer: {
-      message:
-        `Made with ❤️ using <a href="https://vitepress.dev" target="_blank">VitePress</a><br/>
-         This site does not host any files.`,
-      copyright: `© ${new Date().getFullYear()} Supreme Index`
+      message: `Made with 💔, version: <a href="${commitUrl}" target="_blank">${commitTitle}</a><br/>This site does not host any files.`,
+      copyright: `© ${new Date().getFullYear()}, Estd 2025. Supreme Index`
     }
   }
 })
