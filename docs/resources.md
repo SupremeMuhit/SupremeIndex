@@ -4,7 +4,7 @@ A curated collection of resources.
 
 - [**Privacy**](/resource-privacy) - Privacy-focused tools and resources.
 - [**AI**](/resource-ai) - Artificial Intelligence resources.
-- [**Entertainment**](/resource-entertainment) - Otaku, Streaming, Reading, Music.
+- [**Otaku**](/resource-otaku) - Otaku Resources!!
 - [**Gaming**](/resource-gaming) - Gaming resources and platforms.
 - [**Education**](/resource-education) - Educational tools and platforms.
 - [**Downloads**](/resource-downloads) - File sharing and download resources.

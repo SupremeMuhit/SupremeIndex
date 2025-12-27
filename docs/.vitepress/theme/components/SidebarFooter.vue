@@ -96,8 +96,15 @@ const isSelected = (themeName: string) => currentThemeName.value === themeName
       <div class="icon-wrapper">
         <span class="icon">⭐</span>
       </div>
-      <div class="label">Recommendations</div>
+      <div class="label">Favourite</div>
     </div>
+    <div class="card-field">
+      <div class="icon-wrapper">
+        <span class="icon">🌟</span>
+      </div>
+      <div class="label">The Last You Need</div>
+    </div>
+
 
     <!-- Standard Themes -->
     <div class="card-header mt-4">

@@ -98,19 +98,18 @@ export default defineConfig({
 
   themeConfig: {
     search: { provider: 'local' },
-
     logo: { src: '/favicon.ico', alt: 'SI Logo' },
-
+    outline: [2, 6],
     nav: [
       { text: 'Home', link: '/' },
       {
         text: 'Ecosystem',
         items: [
-          { text: 'Feature 1', link: '/' },
-          { text: 'Feature 2', link: '/' },
-          { text: 'Feature 3', link: '/' },
-          { text: 'Feature 4', link: '/' },
-          { text: 'Feature 5', link: '/' }
+          { text: 'Feature 1 (SOON!!)', link: '/' },
+          { text: 'Feature 2 (SOON!!)', link: '/' },
+          { text: 'Feature 3 (SOON!!)', link: '/' },
+          { text: 'Feature 4 (SOON!!)', link: '/' },
+          { text: 'Feature 5 (SOON!!)', link: '/' }
         ]
       }
     ],
@@ -132,7 +131,7 @@ export default defineConfig({
         items: [
           { text: 'Privacy', link: '/resource-privacy' },
           { text: 'AI', link: '/resource-ai' },
-          { text: 'Otaku / Streaming / Music', link: '/resource-entertainment' },
+          { text: 'Otaku', link: '/resource-otaku' },
           { text: 'Gaming', link: '/resource-gaming' },
           { text: 'Education', link: '/resource-education' },
           { text: 'Download / Torrenting', link: '/resource-downloads' },

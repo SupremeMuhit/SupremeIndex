@@ -1,10 +1,7 @@
 # About Me
 
-I am not a developer, not a content creator even I do not know to make websites, I am just a random person.
-And this site is random, have random things.
+I am Supreme Muhit, a random person. I built this site to provide people Free Media, there are already many media index but my site contains only best and importent things.
 
-**This site is a shit, it is made of shit, you are seeing a shit, and you are a shit**
-
----
+> ***Supreme Muhit, the GOD of free media promises you that if you follow my page you will never need credit card***
 
 <p style="text-align: right; opacity: 0.5;">- SupremeMuhit</p>
