@@ -1,3 +1,5 @@
 # BLOG
 
-Soon things will be added here , very very very very very very very very very very soon
+## [The GOD of Browsers](/blogs/vivaldi)
+## [Boruto Watch Guide](/blogs/boruto)
+## [Unstable Universe](/blogs/unstable)

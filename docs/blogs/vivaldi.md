@@ -1,0 +1,1 @@
+# Vivaldi, The GOD of Browsers

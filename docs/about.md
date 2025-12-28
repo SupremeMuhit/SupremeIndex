@@ -1,7 +1,14 @@
 # About Me
 
-I am Supreme Muhit, a random person. I built this site to provide people Free Media, there are already many media index but my site contains only best and importent things.
+I am Supreme Muhit, a random person. [Cheak Social Media Ids](/social-links)
 
-> ***Supreme Muhit, the GOD of free media promises you that if you follow my page you will never need credit card***
+***I created this site to :***
+
+- Use is as my personal bookmark, to use it from anywhere in the world!!
+- Share Usefull Sites/Tools to my friends!!
+- To give people hope that they can live in the world without money!!
+
+> ***A Supreme Quote will be here soooooooooon!!***
 
 <p style="text-align: right; opacity: 0.5;">- SupremeMuhit</p>
+

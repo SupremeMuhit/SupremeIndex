@@ -18,7 +18,7 @@ Must Use Adblocker or you will die suffocating in ads. Cheak Adblokers [here](/r
 
 - ⭐ **[KickassAnime](https://kickass-anime.ro/)**, [2](https://kickassanime.cx/)
 
-- ⭐ **[Miroru](https://www.miruro.com/)** | Scrapper | Good UI | [Github](https://github.com/Miruro-no-kuon/Miruro)
+- ⭐ **[Miroru](https://www.miruro.to/)**, [2](https://miruro.tv/), [3](https://miruro.online/), [4](https://miruro.bz/) | Scrapper | Good UI | [Github](https://github.com/Miruro-no-kuon/Miruro)
 
 - ⭐ **[Anidap](https://anidap.se/)** | Scrapper | Less Ads | Good UI
 
@@ -232,6 +232,12 @@ Must Use Adblocker or you will die suffocating in ads. Cheak Adblokers [here](/r
 
 #### Anilist | MAL Tools
 SOON!!
+
+#### Anime Filler Guide
+
+- [Anime Filler List](https://www.animefillerlist.com/) | Large Library than anime filler guide | Many contributor 
+
+- [Anime Filler Guide](https://www.animefillerguide.com/) | Have exact times of filler part start/end
 
 ::: info 
 More Things Coming ~~Soon~~ **Very Soon**
